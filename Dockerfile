@@ -21,5 +21,3 @@ RUN mkdir /opt/picard-2.18.1/ \
     && mv picard.jar /opt/picard-2.18.1/ \
     && ln -s /opt/picard-2.18.1 /opt/picard \
     && ln -s /opt/picard-2.18.1 /usr/picard
-
-COPY markduplicates_helper.sh /usr/bin/markduplicates_helper.sh
