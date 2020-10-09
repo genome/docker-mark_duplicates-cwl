@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM mgibio/samtools-cwl:1.0.0
 MAINTAINER John Garza <johnegarza@wustl.edu>
 
 LABEL \
@@ -9,11 +9,6 @@ RUN apt-get update -y && apt-get install -y \
     bzip2 \
     default-jre \
     wget
-
-RUN mkdir /opt/sambamba/ \
-    && wget https://github.com/lomereiter/sambamba/releases/download/v0.6.4/sambamba_v0.6.4_linux.tar.bz2 \
-    && tar --extract --bzip2 --directory=/opt/sambamba --file=sambamba_v0.6.4_linux.tar.bz2 \
-    && ln -s /opt/sambamba/sambamba_v0.6.4 /usr/bin/sambamba
 
 RUN mkdir /opt/picard-2.18.1/ \
     && cd /tmp/ \
